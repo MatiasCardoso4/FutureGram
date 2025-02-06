@@ -20,13 +20,15 @@ const createElements = (person) => {
 
   /*User post info */
 
-  const user = document.createElement("div");
+  const postHeader = document.createElement("div");
+  const userInfo = document.createElement("div");
   const avatar = document.createElement("img");
   const name = document.createElement("p");
   //   const locationContainer = document.createElement("div");
   const location = document.createElement("p");
 
-  user.classList.add("general-info-user");
+  postHeader.classList.add("post-header");
+  userInfo.classList.add("user-info");
   avatar.classList.add("user-avatar");
   //   locationContainer.classList.add("user-location");
   name.classList.add("name");
@@ -34,12 +36,15 @@ const createElements = (person) => {
 
   name.textContent = `${person.name.first} ${person.name.last}`;
   avatar.src = `${person.picture.thumbnail}`;
-  location.textContent = `${person.location.city} ${person.location.country}`;
-  user.append(name, avatar, location);
+  location.textContent = `${person.location.city}, ${person.location.country}`;
+  userInfo.append(name, location);
+  postHeader.append(avatar, userInfo);
 
   /* post */
   const image_post = document.createElement("img");
 
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttons");
   const commentBtn = document.createElement("button");
   const commentImg = document.createElement("img");
   commentBtn.className = "btn comment-btn";
@@ -60,26 +65,28 @@ const createElements = (person) => {
   likeBtn.appendChild(likeImg);
   likeBtn.className = "btn like-btn";
 
+  buttons.append(commentBtn, shareBtn, likeBtn);
+
   const totalLikes = document.createElement("p");
+  totalLikes.classList.add("total-likes");
+  totalLikes.textContent = `${Math.floor(Math.random() * 100)} likes`;
+
+  const div = document.createElement("div");
+  div.className = "username-photo-title";
   const user_name = document.createElement("p");
-  const commentary = document.createElement("p");
+  user_name.textContent = `${person.login.username}`;
+
+  const title = document.createElement("p");
+  title.textContent = "My adorable kitten";
+  title.classList.add("commentary");
+  div.append(user_name, title);
 
   image_post.classList.add("image-post");
-  totalLikes.classList.add("total-likes");
   user_name.classList.add("user-name");
-  commentary.classList.add("commentary");
 
   image_post.src = "./assets/cat.jpg";
 
-  post.append(
-    name,
-    avatar,
-    location,
-    image_post,
-    commentBtn,
-    shareBtn,
-    likeBtn
-  );
+  post.append(postHeader, image_post, buttons, totalLikes, div);
 
   posts.appendChild(post);
 };

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +34,7 @@ header {
   cursor: pointer;
 }
 
-.nav-item a{
+.nav-item a {
   text-decoration: none;
   color: whitesmoke;
   font-size: 1.37rem;
@@ -45,14 +46,54 @@ header {
 }
 
 .container {
-  width: 40vw;
+  width: 35vw;
   min-height: 100vh;
-  border: 2px solid black;
+  border: 2px solid rgb(238, 12, 12);
   margin-top: 10px;
+}
+
+.post {
+  padding: 25px 12px;
+  border: 2px solid black;
+}
+
+.post-header {
+  display: flex;
+  padding:  20px;
+  border: 2px solid black;
+}
+
+.post-header .user-avatar {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 12px;
+}
+
+.user-info p:first-child{
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.user-info p:first-child:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .image-post {
   width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  padding:  20px;
 }
 
 .btn {
@@ -61,7 +102,17 @@ header {
   cursor: pointer;
 }
 
-.btn img{
+.btn:hover {
+  opacity: 0.5;
+}
+
+.btn img {
   width: 28px;
   height: 28px;
+}
+
+
+.username-photo-title {
+  display: flex;
+  gap: 10px;
 }
