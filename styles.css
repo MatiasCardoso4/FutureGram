@@ -55,11 +55,14 @@ header {
 .post {
   padding: 25px 12px;
   border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
 }
 
 .post-header {
   display: flex;
-  padding:  20px;
+  padding: 20px;
   border: 2px solid black;
 }
 
@@ -75,7 +78,7 @@ header {
   margin-left: 12px;
 }
 
-.user-info p:first-child{
+.user-info p:first-child {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -93,7 +96,7 @@ header {
 .buttons {
   display: flex;
   gap: 10px;
-  padding:  20px;
+  padding: 12px 0;
 }
 
 .btn {
@@ -111,8 +114,12 @@ header {
   height: 28px;
 }
 
+.total-likes,.username-photo-title p:first-child {
+  font-weight: 500;
+}
 
 .username-photo-title {
   display: flex;
   gap: 10px;
+  margin-top: 10px;
 }

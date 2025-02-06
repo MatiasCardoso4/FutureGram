@@ -2,7 +2,7 @@ const posts = document.querySelector(".posts-container");
 
 async function getUsers() {
   try {
-    const URL = "https://randomuser.me/api/?results=1";
+    const URL = "https://randomuser.me/api/?results=10";
     const response = await fetch(URL);
     const data = await response.json();
     console.log(data);
