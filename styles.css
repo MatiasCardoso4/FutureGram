@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
@@ -38,6 +39,15 @@ header {
   text-decoration: none;
   color: whitesmoke;
   font-size: 1.37rem;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav-item a:focus {
+  opacity: 0.5;
 }
 
 .logo {

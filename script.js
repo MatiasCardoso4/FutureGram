@@ -5,11 +5,10 @@ async function getUsers() {
     const URL = "https://randomuser.me/api/?results=10";
     const response = await fetch(URL);
     const data = await response.json();
-    console.log(data);
     setDisplay(data);
     return data;
   } catch (e) {
-    console.error(e);
+    throw new Error(e)
   }
 }
 
@@ -42,6 +41,9 @@ const createElements = (person) => {
 
   /* post */
   const image_post = document.createElement("img");
+  image_post.classList.add("image-post");
+  image_post.src = "./assets/cat.jpg";
+  image_post.alt = "A kitten saw something that capt his atention";
 
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
@@ -65,7 +67,7 @@ const createElements = (person) => {
   likeBtn.appendChild(likeImg);
   likeBtn.className = "btn like-btn";
 
-  buttons.append(commentBtn, shareBtn, likeBtn);
+  buttons.append(likeBtn, commentBtn, shareBtn);
 
   const totalLikes = document.createElement("p");
   totalLikes.classList.add("total-likes");
@@ -81,10 +83,7 @@ const createElements = (person) => {
   title.classList.add("commentary");
   div.append(user_name, title);
 
-  image_post.classList.add("image-post");
   user_name.classList.add("user-name");
-
-  image_post.src = "./assets/cat.jpg";
 
   post.append(postHeader, image_post, buttons, totalLikes, div);
 
@@ -98,4 +97,4 @@ const setDisplay = (persons) => {
   });
 };
 
-getUsers();
+window.addEventListener('DOMContentLoaded',getUsers)
