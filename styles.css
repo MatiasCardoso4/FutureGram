@@ -50,3 +50,18 @@ header {
   border: 2px solid black;
   margin-top: 10px;
 }
+
+.image-post {
+  width: 100%;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn img{
+  width: 28px;
+  height: 28px;
+}
