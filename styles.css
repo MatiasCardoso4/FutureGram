@@ -68,6 +68,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fill, 1fr);
+ 
 }
 
 .post-header {
@@ -101,6 +102,10 @@ header {
 
 .image-post {
   width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
 }
 
 .buttons {
